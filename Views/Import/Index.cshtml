@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Import Excel</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.ErrorMessage
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+    <div class="alert alert-success" role="alert">
+        @ViewBag.Message
+    </div>
+}
+
+<form id="importForm" action="@Url.Action("Create", "Import")" method="post" enctype="multipart/form-data">
+    <div style="margin-bottom: 10px;">
+        <label for="file">Select Excel File:</label>
+        <input type="file" name="file" required />
+    </div>
+
+    <div style="margin-bottom: 10px;">
+        <label for="tableName">Table Name:</label>
+        <input type="text" name="tableName" />
+    </div>
+
+    <div>
+        <input type="submit" value="Import" />
+    </div>
+</form>
+
+<div id="statusLabel"></div>
