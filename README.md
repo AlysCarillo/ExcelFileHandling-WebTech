@@ -2,6 +2,13 @@
 
 This ASP.NET MVC project demonstrates how to upload, extract, and process data from Excel files, creating tables in a SQL Server database for each worksheet in the Excel file.
 
+## Features
+
+- **Excel File Upload:** Users can upload Excel files with an unknown structure.
+- **Dynamic Table Creation:** The application dynamically creates tables in the database based on the Excel file structure.
+- **Data Extraction:** Data is extracted from the Excel file and inserted into the corresponding database table.
+- **Multiple Worksheets Support:** If an Excel file contains multiple worksheets, tables are created for each worksheet with a user-specified table name prefix.
+
 ## Getting Started
 
 ### Prerequisites
@@ -36,4 +43,7 @@ This ASP.NET MVC project demonstrates how to upload, extract, and process data f
 
 - Ensure that the connection string in `Web.config` is correctly configured for your SQL Server instance.
 - The application creates a table for each worksheet in the Excel file, using the provided table name as a prefix.
+
+## Libraries Used
+**EPPlus**: Used for reading data from Excel files. It is a widely-used library for Excel manipulation in .NET applications.
 
